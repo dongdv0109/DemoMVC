@@ -1,0 +1,65 @@
+﻿@model List<Employees>
+<div class="text-center">
+    <h1 class="m-0 font-weight-bold text-primary">Employees List</h1>
+</div>
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a asp-action="Create" class="btn btn-outline-success m-0 float-left">New User</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                @if (Model.Count == 0)
+                {
+                    <p>No Uaser(s) found!</p>
+                }
+                else
+                {
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="text-center">
+                            <tr>
+                                @* <th scope="col">Id</th> *@
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password
+                                <th>Date Of Birth</th>
+                                <th>Phone Number</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var e in Model)
+                            {
+                                <tr class="text-center">
+                                    @* <td>@e.Id</td> *@
+                                    <td>@e.Name</td>
+                                    <td>@e.Email</td>
+                                    <td>@e.Password</td>
+                                    <td>@e.DateOfBirth</td>
+                                    <td>@e.PhoneNumber</td>
+                                    <td>@e.Address</td>
+                                    <td>
+                                        <a asp-action="Edit" 
+                                        asp-route-id="@e.EmpId" 
+                                        class="btn btn-outline-primary">Edit</a>
+
+                                        <a asp-action="Details"
+                                           asp-route-id="@e.EmpId"
+                                           class="btn btn-outline-primary">Details</a>
+
+                                        <a asp-action="DeleteEmp"
+                                           asp-route-id="@e.EmpId"
+                                           class="btn btn-outline-danger"
+                                           onclick="return confirm('Are you sure to remove this record?')">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
