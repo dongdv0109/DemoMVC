@@ -8,10 +8,7 @@ namespace DemoMVC.Models.DTO
         public Guid EmpId { get; set; }
         public string Name { get; set; }
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-        public string? Password { get; set; }
-        [Display(Name = "Confirm Password")]
-        public string? ConfirmPassword { get; set; }
+        public string Email { get; set; }       
         [DisplayName("Date of Birth")]
         [DataType(DataType.Date)]
         public string? DateOfBirth { get; set; }
