@@ -53,8 +53,6 @@ namespace DemoMVC.Controllers
             {
                 Name = employees.Name,
                 Email = employees.Email,
-                Password = employees.Password,
-                ConfirmPassword = employees.ConfirmPassword,
                 DateOfBirth = employees.DateOfBirth,
                 PhoneNumber = employees.PhoneNumber,
                 Address = employees.Address,

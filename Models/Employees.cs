@@ -11,10 +11,6 @@ namespace DemoMVC.Models
         public string Name { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [DataType(DataType.Password)]
-        public string? Password { get; set; }
-        [Display(Name = "Confirm Password")]
-        public string? ConfirmPassword { get; set; }
         [DisplayName("Date of Birth")]
         [DataType(DataType.Date)]
         public string? DateOfBirth { get; set; }
